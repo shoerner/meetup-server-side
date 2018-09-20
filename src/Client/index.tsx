@@ -1,5 +1,7 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { BaseLayout } from '../BaseLayout';
+import { App } from '../App';
+import { StyleSheet } from 'aphrodite';
 
-ReactDOM.hydrate(<BaseLayout />, document.getElementById("app"));
+StyleSheet.rehydrate((window as any).APHRODITE_STYLES);
+ReactDOM.hydrate(<App />, document.getElementById('root'));

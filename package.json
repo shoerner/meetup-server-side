@@ -6,7 +6,7 @@
   "author": "Shawn Hoerner <shoerner+git@shoerner.net>",
   "license": "MIT",
   "scripts": {
-    "start": "yarn tsc && node ./dist/Server",
+    "start": "yarn tsc && yarn webpack && node ./dist/Server",
     "build": "yarn tsc"
   },
   "dependencies": {
@@ -15,10 +15,14 @@
     "aphrodite": "^2.2.3",
     "express": "^4.16.3",
     "react": "^16.5.1",
-    "react-dom": "^16.5.1"
+    "react-dom": "^16.5.1",
+    "webpack": "^4.19.1"
   },
   "devDependencies": {
+    "@babel/core": "^7.1.0",
     "@types/react-dom": "^16.0.7",
-    "typescript": "^3.0.3"
+    "babel-loader": "^8.0.2",
+    "typescript": "^3.0.3",
+    "webpack-cli": "^3.1.0"
   }
 }

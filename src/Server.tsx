@@ -20,6 +20,7 @@ console.log("Server started on", APP_ASSIGNED_PORT);
 
 function htmlTemplate(reactDom: React.ReactElement<any>) {
     const { html, css } = StyleSheetServer.renderStatic(() => renderToString(reactDom));
+    const stringifiedCss = JSON.stringify(css.renderedClassNames);
 
     return `
     <!DOCTYPE html>
@@ -39,6 +40,10 @@ function htmlTemplate(reactDom: React.ReactElement<any>) {
         </HEAD>
         <BODY>
             <div id="root">${html}</div>
+            <script>
+                window.APHRODITE_STYLES = ${stringifiedCss};
+            </script>
+            <script src="./app.bundle.js"></script>
         </BODY>
     </HTML>
     `

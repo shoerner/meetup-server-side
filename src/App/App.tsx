@@ -2,9 +2,15 @@ import * as React from 'react';
 import { styles } from './App.styles';
 import { css } from 'aphrodite';
 
-import logo from '../logo.svg';
+interface State {
+  counter: number;
+}
 
-export class App extends React.Component {
+export class App extends React.Component<{}, State> {
+  public state: State = {
+    counter: 6,
+  };
+
   public render() {
     return (
       <div className={css(styles.app)}>
@@ -14,9 +20,12 @@ export class App extends React.Component {
           </div>
           <h1 className={css(styles.appTitle)}>Welcome to React Server</h1>
         </header>
-        <p className={css(styles.appIntro)}>
-          To get started, edit <code>src/App.tsx</code> and save to reload.
-        </p>
+        <h3>{this.state.counter}</h3>
+        <input
+          type="button"
+          onClick={() => this.setState(state => ({ counter: state.counter + 1 }))}
+          value="Count Up"
+        />
       </div>
     );
   }
