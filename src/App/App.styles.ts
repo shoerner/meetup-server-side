@@ -27,4 +27,10 @@ export const styles = StyleSheet.create({
       appIntro: {
         fontSize: 'large',
       },
+      party: {
+        display: 'flex', 
+        width: '100%',
+        justifyContent: 'center',
+        alignItems: 'center',
+      },
 })

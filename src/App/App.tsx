@@ -26,6 +26,11 @@ export class App extends React.Component<{}, State> {
           onClick={() => this.setState(state => ({ counter: state.counter + 1 }))}
           value="Count Up"
         />
+        {this.state.counter >= 10 && (
+          <div className={css(styles.party)}>
+            <img src="https://cultofthepartyparrot.com/parrots/hd/parrot.gif" width="50px" />
+          </div>
+        )}
       </div>
     );
   }
